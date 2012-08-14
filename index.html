@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Zen Popup</title>
+
+	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+	
+	<h1>Zen Popup</h1>
+
+
+
+
+	<style type="text/css" id="css_basic">
+		/**
+		 * Bulletproof popups
+		 * 
+		 * @markup:
+		 *  .popup.(popup_top|popup_right|popup_bottom|popup_left)
+		 * 		.popup_triangle_wrap
+		 * 			.popup_triangle
+		 * 		.popup_inner
+		 */
+		
+		.popup {
+			display: block;
+			position: absolute;
+		}
+
+		.popup_triangle_wrap {
+			position: absolute;
+			margin: auto;
+			overflow: hidden;
+		}
+
+		/* for horizontal popups */
+		.popup_top .popup_triangle_wrap,
+		.popup_bottom .popup_triangle_wrap {
+			right: 0;
+			left: 0;
+		}
+
+		.popup_top,
+		.popup_bottom {
+			min-width: 100%;
+		}
+		/* /for horizontal popups */
+
+		/* for vertical popups */
+		.popup_right .popup_triangle_wrap,
+		.popup_left .popup_triangle_wrap {
+			top: 0;
+			bottom: 0;
+		}
+
+		.popup_right,
+		.popup_left {
+			min-height: 100%;
+		}
+		/* /for vertical popups */
+
+		.popup_top    { bottom: 100%; }
+		.popup_right  { left: 100%; }
+		.popup_bottom { top: 100%; }
+		.popup_left   { right: 100%; }
+
+		.popup_top .popup_triangle_wrap    { top: 100%; }
+		.popup_right .popup_triangle_wrap  { right: 100%; }
+		.popup_bottom .popup_triangle_wrap { bottom: 100%; }
+		.popup_left .popup_triangle_wrap   { left: 100%; }
+
+		.popup_triangle {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin: auto;
+			width: 71%; /* just magic o_O, lol pure math */
+			height: 71%; 
+			-webkit-transform: rotate(45deg);
+			   -moz-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				 -o-transform: rotate(45deg);
+					transform: rotate(45deg);
+
+		}
+
+		/* just magic o_O, lol pure math */
+		.popup_top .popup_triangle    { margin-bottom: 65%; }
+		.popup_right .popup_triangle  { margin-left: 65%; }
+		.popup_bottom .popup_triangle { margin-top: 65%; }
+		.popup_left .popup_triangle   { margin-right: 65%; }
+
+		#target {
+			width: 300px;
+			height: 300px;
+			margin: 150px;
+			background: red;
+			position: relative
+		}
+	</style>
+
+
+<style type="text/css" id="css_customization" contenteditable>
+.popup { border-radius: 2px; }
+.popup_triangle_wrap {
+	width: 14px; height: 14px;
+}
+
+.popup_top    { margin-bottom: 5px; }
+.popup_right  { margin-left: 5px; }
+.popup_bottom { margin-top: 5px; }
+.popup_left   { margin-right: 5px; }
+
+.popup,
+.popup_triangle {
+	background: #fcfcfc;
+	box-shadow: 0 0 3px rgba(0, 0, 0, .38);
+}
+</style>
+
+	<div id="example">
+
+		<div id="target">
+			<div class="popup popup_top">
+				<div class="popup_triangle_wrap">
+					<div class="popup_triangle"></div>
+				</div>
+				<div class="popup_inner">
+					popup top
+				</div>
+			</div>
+			<div class="popup popup_right">
+				<div class="popup_triangle_wrap">
+					<div class="popup_triangle"></div>
+				</div>
+				<div class="popup_inner">
+					popup right
+				</div>
+			</div>
+			
+			<div class="popup popup_left">
+				<div class="popup_triangle_wrap">
+					<div class="popup_triangle"></div>
+				</div>
+				<div class="popup_inner">
+					popup left
+				</div>
+			</div>
+			
+			<div class="popup popup_bottom">
+				<div class="popup_triangle_wrap">
+					<div class="popup_triangle"></div>
+				</div>
+				<div class="popup_inner">
+					popup bottom
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+</body>
+</html>
