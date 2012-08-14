@@ -1,8 +1,17 @@
 #css_customization {
-	float: right;
-	width: 50%;
 	height: 500px;
 	background: #f1f1f1;
 	display: block;
 	white-space: pre-wrap;
 }
+
+.area {
+	width: 50%;
+	float: left;
+}
+
+/*
+.geek-form {
+	display: none;
+}
+*/
